@@ -1,5 +1,7 @@
 ### TUGAS-8_PRAKTIKUM_PEMROGRAMAN-MOBILE_PERTEMUAN-9
-    Aplikasi ini dibuat sebagai Tugas pertemuan 9 Pemrograman Mobile untuk membangun fitur Login Sederhana dan Side Menu (Drawer) dengan navigasi halaman (routes) menggunakan Framework Flutter. Tujuan utama dari pembuatan sistem ini adalah untuk mengimplementasikan autentikasi pengguna dan navigasi antar halaman, serta memanfaatkan penyimpanan lokal (Local Storage).
+
+---
+Aplikasi ini dibuat sebagai Tugas pertemuan 9 Pemrograman Mobile untuk membangun fitur Login Sederhana dan Side Menu (Drawer) dengan navigasi halaman (routes) menggunakan Framework Flutter. Tujuan utama dari pembuatan sistem ini adalah untuk mengimplementasikan autentikasi pengguna dan navigasi antar halaman, serta memanfaatkan penyimpanan lokal (Local Storage).
 ---
 
 ### IDENTITAS PENGEMBANG
@@ -29,13 +31,11 @@
 
 ---
 ## TAMPILAN HALAMAN APLIKASI
-**a. Tampilan Halaman Login**
+a. Tampilan Halaman Login
 <img width="290" height="516" alt="image" src="https://github.com/user-attachments/assets/c193c6a0-b9d9-4dce-9ff5-34e80f37bc86" />
---
-**b. Tampilan Halaman Home-page**
+b. Tampilan Halaman Home-page
 <img width="286" height="540" alt="image" src="https://github.com/user-attachments/assets/32ed07f5-53be-4b07-8342-6f64b277afc8" />
---
-**c. Tampilan Halaman Side-menu**
+c. Tampilan Halaman Side-menu
 <img width="325" height="684" alt="image" src="https://github.com/user-attachments/assets/6fc31ccb-4177-497c-a38c-da900cb88067" />
 
 ---
