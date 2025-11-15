@@ -1,59 +1,101 @@
-### TUGAS-8_PRAKTIKUM_PEMROGRAMAN-MOBILE_PERTEMUAN-9
+# TUGAS 8 – Praktikum Pemrograman Mobile (Pertemuan 9)
+
+Aplikasi ini dibuat sebagai tugas pertemuan ke-9 pada mata kuliah Pemrograman Mobile. Aplikasi ini menerapkan fitur **Login Sederhana**, **Side Menu (Drawer)**, dan navigasi halaman menggunakan Flutter. Selain itu, aplikasi memanfaatkan **Local Storage** melalui `shared_preferences` untuk menyimpan data pengguna.
 
 ---
-Aplikasi ini dibuat sebagai Tugas pertemuan 9 Pemrograman Mobile untuk membangun fitur Login Sederhana dan Side Menu (Drawer) dengan navigasi halaman (routes) menggunakan Framework Flutter. Tujuan utama dari pembuatan sistem ini adalah untuk mengimplementasikan autentikasi pengguna dan navigasi antar halaman, serta memanfaatkan penyimpanan lokal (Local Storage).
----
 
-### IDENTITAS PENGEMBANG
-- **Nama:** Yohana Des Ingrid Patricia Butarbutar
-- **NIM:** H1D023031
-- **Program Studi:** Informatika
-- **Universitas:** Universitas Jenderal Soedirman
-- **Shift Awal:** A
-- **Shift Baru:** E
-
----
-## FITUR UTAMA
-- Simple Login: Menggunakan hardcoded username dan password untuk simulasi autentikasi.
-- Local Storage: Menyimpan username pengguna yang berhasil login menggunakan shared_preferences.
-- Side Menu (Drawer): Menyediakan menu navigasi yang mudah diakses ke berbagai halaman.
-- Routes: Navigasi antar halaman (Login, Home, About) menggunakan MaterialPageRoute.
----
-## PENJELASAN KODE APLIKASI
-- login_page.dart
-  Kode ini mendefinisikan halaman login sebagai sebuah StatefulWidget bernama LoginPage. Halaman ini menggunakan dua TextEditingController, yaitu userC dan passC, untuk mengambil input username dan password dari pengguna. Fungsi saveUser() bertanggung jawab untuk menyimpan username yang berhasil masuk ke dalam penyimpanan lokal menggunakan SharedPreferences. Logika autentikasi berada dalam fungsi login(), di mana ia membandingkan input dengan nilai tetap "admin" dan "admin123"; jika cocok, pengguna diarahkan ke HomePage setelah menampilkan dialog sukses, dan jika gagal, dialog peringatan kegagalan ditampilkan. Tampilan antarmuka didesain dengan tema "NeoGreen Login" menggunakan warna hijau, box shadow, dan tombol ElevatedButton yang memenuhi lebar area login.
-- home_page.dart
-  Kode ini membuat HomePage, yang merupakan halaman utama setelah login, didefinisikan sebagai StatefulWidget untuk mengelola status username yang dimuat. Pada metode initState(), fungsi loadUser() dipanggil untuk mengambil username yang tersimpan dari SharedPreferences dan memperbarui variabel username di state. Tampilan halaman ini mencakup sebuah AppBar berwarna hijau dengan judul "Dashboard" dan komponen SideMenu yang dipasang pada properti drawer. Konten utama halaman menampilkan teks sambutan personal "Selamat datang, $username 👋" dengan gaya teks tebal berwarna hijau, mengambil nilai username yang telah berhasil dimuat.
-- side_menu.dart
-  SideMenu adalah widget StatelessWidget yang berfungsi sebagai drawer navigasi aplikasi. Ia mengembalikan widget Drawer yang berisi ListView dengan padding di bagian atas. Tampilan menu memiliki latar belakang hijau muda (Colors.green.shade50) dan dilengkapi dengan bagian kepala berupa ikon akun dan teks "NeoGreen Menu". Terdapat dua item navigasi utama yang direpresentasikan oleh ListTile: "Home", yang menggunakan Navigator.pushReplacement untuk memastikan pengguna kembali ke HomePage, dan "About", yang menggunakan Navigator.push untuk membuka AboutPage.
-- about_page.dart
- Kode ini mendefinisikan AboutPage sebagai StatelessWidget sederhana. Tujuannya adalah menampilkan informasi statis tentang aplikasi. Halaman ini memiliki Scaffold dengan AppBar berwarna hijau dengan judul "About App". Konten utama diletakkan di dalam widget Padding dan berupa Text yang menjelaskan bahwa aplikasi ini adalah bagian dari modul pembelajaran Flutter dan menggunakan tema warna hijau. Teks deskripsi ini ditampilkan dengan ukuran font 18. 
+## 👤 Identitas Pengembang
+| Keterangan | Data |
+|-----------|------|
+| **Nama** | Yohana Des Ingrid Patricia Butarbutar |
+| **NIM** | H1D023031 |
+| **Program Studi** | Informatika |
+| **Universitas** | Universitas Jenderal Soedirman |
+| **Shift Awal** | A |
+| **Shift Baru** | E |
 
 ---
-## TAMPILAN HALAMAN APLIKASI
-a. Tampilan Halaman Login
-<img width="290" height="516" alt="image" src="https://github.com/user-attachments/assets/c193c6a0-b9d9-4dce-9ff5-34e80f37bc86" />
-b. Tampilan Halaman Home-page
-<img width="286" height="540" alt="image" src="https://github.com/user-attachments/assets/32ed07f5-53be-4b07-8342-6f64b277afc8" />
-c. Tampilan Halaman Side-menu
-<img width="325" height="684" alt="image" src="https://github.com/user-attachments/assets/6fc31ccb-4177-497c-a38c-da900cb88067" />
+
+## ✨ Fitur Utama
+- **Login sederhana** dengan username dan password yang di-hardcode.  
+- **Penyimpanan lokal** menggunakan `shared_preferences` untuk menyimpan username.  
+- **Side Menu (Drawer)** untuk navigasi cepat antar halaman.  
+- **Navigasi Flutter** menggunakan `MaterialPageRoute` antar halaman Login, Home, dan About.  
 
 ---
-## STRUKTUR FOLDER APLIKASI
-Agar rapi dan mengikuti standar Flutter, folder lib/ disusun menjadi:
-lib/
- ├─ main.dart
- ├─ pages/
- │    ├─ login_page.dart
- │    ├─ home_page.dart
- │    └─ about_page.dart
- └─ widgets/
-      └─ side_menu.dart
+
+## 🧩 Penjelasan Kode
+
+### 1. `login_page.dart`
+- Menyediakan halaman login berbasis `StatefulWidget`.  
+- Menggunakan dua `TextEditingController` untuk input username dan password.  
+- Fungsi:
+  - `saveUser()` → menyimpan username ke local storage.
+  - `login()` → mengecek kecocokan username **admin** dan password **admin123**.  
+- Jika login sukses → tampil dialog sukses → menuju **HomePage**.  
+- Jika gagal → muncul dialog gagal.  
+- UI bertema **NeoGreen Login**.
+
 ---
 
-## KESIMPULAN
-Aplikasi Flutter yang kamu buat berhasil mengimplementasikan:
-- Login sederhana dengan validasi manual
-- Penyimpanan username menggunakan SharedPreferences
-- Navigasi antar halaman menggunakan Side Menu
-- UI yang modern dan konsisten dengan tema hijau
+### 2. `home_page.dart`
+- Halaman utama setelah login.  
+- Memuat username dari local storage melalui `loadUser()`.  
+- Menampilkan:
+  - AppBar hijau bertuliskan **Dashboard**.
+  - Drawer dari widget `SideMenu`.
+  - Sambutan: **“Selamat datang, $username 👋”**.
+
+---
+
+### 3. `side_menu.dart`
+- Drawer navigasi dengan warna hijau muda.  
+- Isi menu:
+  - Ikon akun + label **NeoGreen Menu**
+  - Menu **Home** (pushReplacement)  
+  - Menu **About** (push)  
+
+---
+
+### 4. `about_page.dart`
+- Halaman statis berisi informasi sederhana tentang aplikasi.  
+- Memiliki AppBar hijau dan teks deskripsi di dalam `Padding`.
+
+---
+
+## 📱 Tampilan Aplikasi
+
+### a. Halaman Login
+<img width="290" height="516" src="https://github.com/user-attachments/assets/c193c6a0-b9d9-4dce-9ff5-34e80f37bc86" />
+
+### b. Halaman Home
+<img width="286" height="540" src="https://github.com/user-attachments/assets/32ed07f5-53be-4b07-8342-6f64b277afc8" />
+
+### c. Halaman Side Menu
+<img width="325" height="684" src="https://github.com/user-attachments/assets/6fc31ccb-4177-497c-a38c-da900cb88067" />
+
+---
+
+## 📂 Struktur Folder
+    lib/
+├─ main.dart
+├─ pages/
+│ ├─ login_page.dart
+│ ├─ home_page.dart
+│ └─ about_page.dart
+└─ widgets/
+└─ side_menu.dart
+
+
+---
+
+## 📝 Kesimpulan
+Aplikasi ini berhasil mengimplementasikan:
+- Login sederhana  
+- Penyimpanan username menggunakan `SharedPreferences`  
+- Navigasi menggunakan Drawer  
+- Desain UI bertema hijau yang konsisten  
+
+Aplikasi ini merupakan dasar pembelajaran Flutter untuk memahami **state**, navigasi, dan penyimpanan lokal.
+
+---
