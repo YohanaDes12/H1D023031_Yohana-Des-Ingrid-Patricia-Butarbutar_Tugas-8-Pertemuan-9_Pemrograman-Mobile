@@ -78,14 +78,14 @@ Aplikasi ini dibuat sebagai tugas pertemuan ke-9 pada mata kuliah Pemrograman Mo
 
 ## 📂 Struktur Folder
     lib/
-├─ main.dart
-├─ pages/
-│ ├─ login_page.dart
-│ ├─ home_page.dart
-│ └─ about_page.dart
-└─ widgets/
-└─ side_menu.dart
-
+    ├─ main.dart
+    ├─ pages/
+    │ ├─ login_page.dart
+    │ ├─ home_page.dart
+    │ └─ about_page.dart
+    └─ widgets/
+    └─ side_menu.dart
+    
 
 ---
 
